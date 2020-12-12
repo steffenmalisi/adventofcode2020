@@ -51,16 +51,6 @@ const directions = [
   (y, x) => [y + 0, x + 1],
   (y, x) => [y - 1, x + 1],
   (y, x) => [y - 1, x + 0],];
-const adjacentSeats = [
-  [-1, -1],
-  [0, -1],
-  [1, -1],
-  [1, 0],
-  [1, 1],
-  [0, 1],
-  [-1, 1],
-  [-1, 0],
-];
 
 function getNumberOfOccupiedSeats(y, x, data, bubble) {
   bubble = bubble === undefined ? false : bubble;
@@ -77,15 +67,6 @@ function getNumberOfOccupiedSeats(y, x, data, bubble) {
       );
       return data[i[0]] && data[i[0]][i[1]] && data[i[0]][i[1]] === "#" ? 1 : 0;
     })
-    .reduce((a, b) => a + b);
-}
-
-function getNumberOfOccupiedAdjecentSeats(y, x, data) {
-  return adjacentSeats
-    .map((i) => [y + i[0], x + i[1]])
-    .map((i) =>
-      data[i[0]] && data[i[0]][i[1]] && data[i[0]][i[1]] === "#" ? 1 : 0
-    )
     .reduce((a, b) => a + b);
 }
 
