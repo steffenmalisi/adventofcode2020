@@ -41,7 +41,6 @@ function calculateOccupiedSeats(data, bubble, minThreshold) {
     .reduce((a, b) => a + b);
 }
 
-// prettier-ignore
 const directions = [
   (y, x) => [y - 1, x - 1],
   (y, x) => [y + 0, x - 1],
@@ -50,7 +49,8 @@ const directions = [
   (y, x) => [y + 1, x + 1],
   (y, x) => [y + 0, x + 1],
   (y, x) => [y - 1, x + 1],
-  (y, x) => [y - 1, x + 0],];
+  (y, x) => [y - 1, x + 0],
+];
 
 function getNumberOfOccupiedSeats(y, x, data, bubble) {
   bubble = bubble === undefined ? false : bubble;
@@ -70,8 +70,4 @@ function getNumberOfOccupiedSeats(y, x, data, bubble) {
     .reduce((a, b) => a + b);
 }
 
-export {
-  parseInputData,
-  calculateOccupiedSeats,
-  getNumberOfOccupiedSeats,
-};
+export { parseInputData, calculateOccupiedSeats, getNumberOfOccupiedSeats };
