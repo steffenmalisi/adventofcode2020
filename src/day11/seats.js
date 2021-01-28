@@ -7,7 +7,7 @@ async function parseInputData(path) {
 }
 
 function calculateOccupiedSeats(data, bubble, minThreshold) {
-  minThreshold = minThreshold === undefined ? 4 : minThreshold;
+  minThreshold = minThreshold || 4;
   let newData;
   let proceed;
   do {
@@ -53,7 +53,7 @@ const directions = [
 ];
 
 function getNumberOfOccupiedSeats(y, x, data, bubble) {
-  bubble = bubble === undefined ? false : bubble;
+  bubble = bubble || false;
   return directions
     .map((d) => {
       let i = [y, x];
